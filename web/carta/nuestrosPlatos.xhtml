@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../templade/diseñoProyecto.xhtml">
+
+            <ui:define name="top">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark py-4 fixed-top">
+                    <div class="container">
+                        <h:link outcome="/index.xhtml" class="navbar-brand d-flex justify-content-between align-items-center order-lg-0">
+                            <h:graphicImage alt="site icon" url="/resources/imagen/logo.png" style="width: 100px; margin: -30px;"></h:graphicImage>
+                            <h:outputLabel class="text-uppercase text-white fw-lighter ms-3" value="Restaurante Norte Rico"></h:outputLabel>
+                        </h:link>
+                        <div class="order-lg-2 nav-btns">
+                            <button type="button" class="btn position-relative">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                            <h:outputLabel class="navbar-toggler-icon"></h:outputLabel>
+                        </button>
+                        <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                            <ul class="navbar-nav mx-auto text-center">
+                                <li class="nav-item px-2 py-2">
+                                    <h:link class="nav-link text-uppercase text-white" outcome="nuestrosPlatos.xhtml" value="#{cdi['platos']}"></h:link>
+                                </li>
+                                <li class="nav-item px-2 py-2">
+                                    <h:link class="nav-link text-uppercase text-white" outcome="/reservaCliente/agregar.xhtml" value="#{cdi['reservas']}"></h:link>
+                                </li>
+                                <li class="nav-item px-2 py-2">
+                                    <h:link class="nav-link text-uppercase text-white" outcome="/nosotros/sobreNosotros.xhtml" value="#{cdi['nosotros']}"></h:link>
+                                </li>
+                                <li class="nav-item px-2 py-2 border-0">
+                                    <h:link class="nav-link text-uppercase text-white" outcome="/sesion/iniciarSesion.xhtml" value="#{cdi['sesion']}"></h:link>
+                                </li>
+                                <li class="nav-item px-2 py-2 border-0">
+                                    <h:link class="nav-link text-uppercase text-white" outcome="/sesion/sesionAdmin.xhtml" value="#{cdi['admin']}"></h:link>
+                                </li>
+                                <li class="nav-item px-2 py-2 border-0">
+                                    <h:form>
+                                        <h:selectOneMenu onchange="this.form.submit()"
+                                                         valueChangeListener="#{managedIdioma.cambiarIdioma}">
+                                            <f:selectItem itemValue="es" itemLabel="#{cdi['generarEspanol']}"></f:selectItem>
+                                            <f:selectItem itemValue="en" itemLabel="#{cdi['generarIngles']}"></f:selectItem>
+                                        </h:selectOneMenu>
+                                    </h:form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </ui:define>
+
+            <ui:define name="content">
+                <div class="container-fluid text-center mx-auto px-5 text-center" style="margin-top: 10rem;">
+                    <div class="row">
+                        <h2 class="text-light">#{cdi['cartaCajamarca']}</h2><br></br><br></br><br></br>
+                        <hr class="text-light"></hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/cajamarca/caldo-cordero.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/cajamarca/chicharron-mote.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CALDO DE CORDERO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CHICHARRON CON MOTE<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/cajamarca/cuy frito.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/cajamarca/frito-cajamarquino.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CUY FRITO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">FRITO CAJAMARQUINO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/cajamarca/puchero.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">PUCHERO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-center mx-auto px-5 text-center" style="margin-top: 10rem;">
+                    <div class="row">
+                        <h2 class="text-light">#{cdi['cartaTrujillo']}</h2><br></br><br></br><br></br>
+                        <hr class="text-light"></hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/trujillo/cebiche-trujillano.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/trujillo/el-shambar.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CEVICHE TRUJILLANO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">EL SHAMBAR<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/trujillo/frito-trujillano.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/trujillo/seco-cabrito.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">FRITO TRUJILLANO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">SECO DE CABRITO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-center mx-auto px-5 text-center" style="margin-top: 10rem;">
+                    <div class="row">
+                        <h2 class="text-light">#{cdi['cartaChimbote']}</h2><br></br><br></br><br></br>
+                        <hr class="text-light"></hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/chimbote/caldo-jeta.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/chimbote/causa-pescado.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CALDO DE JETA<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CAUSA DE PESCADO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/chimbote/cebiche-chimbotano.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/chimbote/frejolado-pato.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CEBICHE CHIMBOTANO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">FREJOLADO DE PATO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-center mx-auto px-5 text-center" style="margin-top: 10rem;">
+                    <div class="row">
+                        <h2 class="text-light">#{cdi['cartaPiura']}</h2><br></br><br></br><br></br>
+                        <hr class="text-light"></hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/piura/cabrito-nortena.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/piura/cebiche-mero.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CABRITO A LA NORTEÑA<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CEBICHE DE MERO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/piura/la-malarrabia.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/piura/seco-chabelo.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">LA MALARRABIA<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">SECO DE CHABELO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/piura/sudado-cachema.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">SUDADO DE CACHEMA<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-center mx-auto px-5 text-center" style="margin-top: 10rem;">
+                    <div class="row">
+                        <h2 class="text-light">#{cdi['cartaTumbes']}</h2><br></br><br></br><br></br>
+                        <hr class="text-light"></hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/tumbes/aji-langostinos.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/tumbes/caldo-bolas.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">AJI DE LANGOSTINOS<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CALDO DE BOLAS<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/tumbes/cebiche-conchas.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/tumbes/chupe-cangrejo.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CEBICHE DE CONCHAS<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">CHUPE DE CANGREJO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h:graphicImage url="/resources/imagen/tumbes/majarico.jpg" width="400" height="300" style="border-radius: 10%;"></h:graphicImage>
+                        </div>
+                    </div><br></br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-light" style="font-size: 15px;">MAJARICO<br></br>Este rico platillo es muy recomendado para comer en el invierno,
+                                pues además de ser una sopa muy nutritiva, posee la carne de cordero. Es por ello que
+                                es tan rica en vitaminas y minerales que aportan en grandes cantidades al funcionamiento del organismo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-center mx-auto px-5 text-center" style="margin-top: 10rem;">
+                    <div class="row">
+                        <h2 class="text-light">(っ＾▿＾)۶🍸🌟🍺٩(˘◡˘ )</h2><br></br><br></br><br></br>
+                        <hr class="text-light"></hr>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

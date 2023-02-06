@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../../templade/diseñoProyecto.xhtml">
+
+            <ui:define name="top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark py-4 fixed-top">
+                <div class="container">
+                    <h:link outcome="/indexAdmin.xhtml" class="navbar-brand d-flex justify-content-between align-items-center order-lg-0">
+                        <h:graphicImage alt="site icon" url="/resources/imagen/logo.png" style="width: 100px; margin: -30px;"></h:graphicImage>
+                        <h:outputLabel class="text-uppercase text-white fw-lighter ms-3" value="Zona Administrativa"></h:outputLabel>
+                    </h:link>
+                    <div class="order-lg-2 nav-btns">
+                        <button type="button" class="btn position-relative">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                        <h:outputLabel class="navbar-toggler-icon"></h:outputLabel>
+                    </button>
+                    <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                        <ul class="navbar-nav mx-auto text-center">
+                            <li class="nav-item px-2 py-2">
+                                <h:link class="nav-link text-uppercase text-white" outcome="/Administrador/mesa/indexMesa.xhtml" value="Mesas"></h:link>
+                            </li>
+                            <li class="nav-item px-2 py-2">
+                                <h:link class="nav-link text-uppercase text-white" outcome="/Administrador/plato/indexPlato.xhtml" value="Platos"></h:link>
+                            </li>
+                            <li class="nav-item px-2 py-2">
+                                <h:link class="nav-link text-uppercase text-white" outcome="indexUsuario.xhtml" value="Usuarios"></h:link>
+                            </li>
+                            <li class="nav-item px-2 py-2">
+                                <h:link class="nav-link text-uppercase text-white" outcome="/Administrador/reserva/indexReserva.xhtml" value="Reservas"></h:link>
+                            </li>
+                            <li class="nav-item px-2 py-2 border-0">
+                                <h:link class="nav-link text-uppercase text-white" outcome="/index.xhtml" value="Tienda"></h:link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </ui:define>
+
+            <ui:define name="content">
+                <div class="container" style="margin-top: 10rem;" >
+                    <h2 class="text-light text-center">Administración de los Usuarios</h2>
+                    <hr class="text-light"></hr>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; text-align: center;">
+                        <h:link class="nav-link text-uppercase text-white" outcome="agregar.xhtml" value="Agregar nuevo usuario"></h:link>
+                        <h:link class="nav-link text-uppercase text-white" outcome="listar.xhtml" value="Listar todos los usuarios"></h:link>
+                    </div><br></br><br></br>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                        <h:outputLabel value="Ingresar un nombre: " class="col-form-label text-light"></h:outputLabel>
+                        <h:inputText value="#{managedUsuario.usuario.nombreUsuario}"></h:inputText>
+                        <h:outputLabel value="Ingresar un apellido: " class="col-form-label text-light"></h:outputLabel>
+                        <h:inputText value="#{managedUsuario.usuario.apellidoUsuario}"></h:inputText>
+                        <h:outputLabel value="Ingresar un teléfono: " class="col-form-label text-light"></h:outputLabel>
+                        <h:inputText value="#{managedUsuario.usuario.telefono}"></h:inputText>
+                        <h:outputLabel value="Ingresar un correo: " class="col-form-label text-light"></h:outputLabel>
+                        <h:inputText value="#{managedUsuario.usuario.correo}"></h:inputText>
+                        <h:outputLabel value="Ingresar una contraseña: " class="col-form-label text-light"></h:outputLabel>
+                        <h:inputText value="#{managedUsuario.usuario.contraseña}"></h:inputText>
+                        <h:commandButton value="Agregar un usuario" actionListener="#{managedUsuario.insertarUsuario()}" 
+                                         class="btn btn-warning text-white"
+                                         action="agregar.xhtml"></h:commandButton>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
